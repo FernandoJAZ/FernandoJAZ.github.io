@@ -3,133 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fernando JAZ | Portafolio</title>
+    <title>Fernando JAZ | Desarrollador & Técnico</title>
     <style>
         :root {
-            --bg: #f8f9fa;
-            --text: #2d3436;
-            --accent: #6c5ce7;
-            --card-bg: #ffffff;
+            --primary: #0f172a;
+            --secondary: #38bdf8;
+            --text: #f1f5f9;
+            --text-dim: #94a3b8;
+            --card-bg: #1e293b;
         }
 
         body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background-color: var(--bg);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--primary);
             color: var(--text);
             margin: 0;
+            line-height: 1.6;
+        }
+
+        /* --- SECCIÓN HERO --- */
+        .hero {
+            height: 60vh;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-
-        header {
             text-align: center;
-            margin-bottom: 50px;
+            background: radial-gradient(circle at top right, #1e293b, #0f172a);
+            padding: 20px;
         }
 
-        h1 {
+        .hero h1 {
+            font-size: 3.5rem;
             margin: 0;
-            font-size: 2.5rem;
-            letter-spacing: -1px;
+            background: linear-gradient(to right, #fff, var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        p.subtitle {
-            color: #636e72;
-            margin-top: 10px;
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 600px;
         }
 
+        /* --- SECCIÓN HABILIDADES --- */
+        .skills {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: -30px;
+            padding: 0 20px;
+        }
+
+        .skill-badge {
+            background: var(--card-bg);
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 1px solid var(--secondary);
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        /* --- CONTENEDOR PRINCIPAL --- */
+        main {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        h2.section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+
+        /* --- GRID DE PROYECTOS --- */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            max-width: 900px;
-            width: 100%;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
 
         .card {
             background: var(--card-bg);
+            border-radius: 16px;
             padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-decoration: none;
             color: inherit;
-            border: 1px solid #eee;
+            border: 1px solid #334155;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(108, 92, 231, 0.1);
-            border-color: var(--accent);
+            transform: translateY(-10px);
+            border-color: var(--secondary);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
         }
 
-        .card h2 {
-            margin: 0 0 10px 0;
+        .card h3 {
+            margin: 0 0 15px 0;
+            color: var(--secondary);
             font-size: 1.5rem;
-            color: var(--accent);
-        }
-
-        .card p {
-            margin: 0;
-            line-height: 1.6;
-            color: #636e72;
-            flex-grow: 1;
         }
 
         .tag {
-            display: inline-block;
-            background: #eee;
-            padding: 4px 10px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            margin-top: 20px;
-            font-weight: bold;
-            color: #2d3436;
+            font-size: 0.75rem;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--secondary);
+            padding: 4px 12px;
+            border-radius: 100px;
+            border: 1px solid var(--secondary);
         }
 
         footer {
-            margin-top: auto;
-            padding-top: 50px;
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-dim);
             font-size: 0.9rem;
-            color: #b2bec3;
+            border-top: 1px solid #334155;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <section class="hero">
         <h1>Fernando JAZ</h1>
-        <p class="subtitle">Desarrollador y Creador | Mis Proyectos</p>
-    </header>
+        <p>Desarrollador Frontend & Técnico Especialista. Construyendo soluciones digitales sólidas y experimentos visuales interactivos.</p>
+    </section>
 
-    <main class="grid">
-        <!-- Proyecto 1: Fanzine Creator -->
-        <a href="https://fernandojaz.github.io/fanzine-creator/" class="card">
-            <h2>📖 Fanzine Creator</h2>
-            <p>Maquetador vectorial automático para fanzines de 8 y 16 páginas. Listo para imprimir en A4.</p>
-            <div><span class="tag">Herramienta PDF</span></div>
-        </a>
+    <div class="skills">
+        <span class="skill-badge">HTML5</span>
+        <span class="skill-badge">CSS3 / Grid / Flex</span>
+        <span class="skill-badge">JavaScript (ES6+)</span>
+        <span class="skill-badge">Canvas API</span>
+        <span class="skill-badge">Web Optimization</span>
+    </div>
 
-        <!-- Proyecto 2: Fontanería López -->
-        <a href="https://fernandojaz.github.io/fontanerialopez/" class="card">
-            <h2>🔧 Fontanería López</h2>
-            <p>Sitio web profesional para servicios de fontanería. Diseño limpio y enfocado a la conversión.</p>
-            <div><span class="tag">Web Corporativa</span></div>
-        </a>
-        <!-- Tarjeta del Laboratorio de JavaScript (Tu nueva sección de experimentos) -->
-        <a href="https://fernandojaz.github.io/usando-javascript/" class="card">
-            <h2>🧪 JavaScript Lab</h2>
-            <p>Colección de experimentos interactivos: animaciones con Canvas, lógica de movimiento y efectos de paralaje 3D (como "La Vaca Que Sube").</p>
-            <div><span class="tag">JS / Canvas / CSS3 3D</span></div>
-        </a>
+    <main>
+        <h2 class="section-title">Ecosistema de Proyectos</h2>
+        
+        <div class="grid">
+            <!-- Proyecto 1 -->
+            <a href="https://fernandojaz.github.io/reparaciones-reformas/" class="card">
+                <div>
+                    <span class="tag">Servicios Profesionales</span>
+                    <h3>Reparaciones & Reformas</h3>
+                    <p>Optimización web para servicios técnicos. Enfoque en conversión, limpieza visual y SEO local.</p>
+                </div>
+            </a>
+
+            <!-- Proyecto 2 -->
+            <a href="https://fernandojaz.github.io/usando-javascript/" class="card">
+                <div>
+                    <span class="tag">Laboratorio Creativo</span>
+                    <h3>JavaScript Lab</h3>
+                    <p>Colección de experimentos visuales: desde física de partículas hasta el famoso efecto de "La Vaca Que Sube".</p>
+                </div>
+            </a>
+
+            <!-- Proyecto 3 -->
+            <a href="https://fernandojaz.github.io/fanzine-mamporrero-v2/" class="card">
+                <div>
+                    <span class="tag">Diseño Editorial</span>
+                    <h3>Fanzine Digital</h3>
+                    <p>Exploración de maquetación creativa y narrativa visual en formato web dinámico.</p>
+                </div>
+            </a>
+        </div>
     </main>
 
     <footer>
-        &copy; 2026 Fernando JAZ - Hecho con ❤️ y GitHub Pages
+        <p>Desarrollado por Fernando JAZ | Almería, España</p>
+        <p>Encuéntrame en <a href="https://github.com/FernandoJAZ" style="color: var(--secondary)">GitHub</a></p>
     </footer>
 
 </body>
