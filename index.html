@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fernando JAZ | Portafolio</title>
+    <style>
+        :root {
+            --bg: #f8f9fa;
+            --text: #2d3436;
+            --accent: #6c5ce7;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: -1px;
+        }
+
+        p.subtitle {
+            color: #636e72;
+            margin-top: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(108, 92, 231, 0.1);
+            border-color: var(--accent);
+        }
+
+        .card h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        .card p {
+            margin: 0;
+            line-height: 1.6;
+            color: #636e72;
+            flex-grow: 1;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #eee;
+            padding: 4px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #2d3436;
+        }
+
+        footer {
+            margin-top: auto;
+            padding-top: 50px;
+            font-size: 0.9rem;
+            color: #b2bec3;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Fernando JAZ</h1>
+        <p class="subtitle">Desarrollador y Creador | Mis Proyectos</p>
+    </header>
+
+    <main class="grid">
+        <!-- Proyecto 1: Fanzine Creator -->
+        <a href="https://fernandojaz.github.io/fanzine-creator/" class="card">
+            <h2>📖 Fanzine Creator</h2>
+            <p>Maquetador vectorial automático para fanzines de 8 y 16 páginas. Listo para imprimir en A4.</p>
+            <div><span class="tag">Herramienta PDF</span></div>
+        </a>
+
+        <!-- Proyecto 2: Fontanería López -->
+        <a href="https://fernandojaz.github.io/fontanerialopez/" class="card">
+            <h2>🔧 Fontanería López</h2>
+            <p>Sitio web profesional para servicios de fontanería. Diseño limpio y enfocado a la conversión.</p>
+            <div><span class="tag">Web Corporativa</span></div>
+        </a>
+    </main>
+
+    <footer>
+        &copy; 2026 Fernando JAZ - Hecho con ❤️ y GitHub Pages
+    </footer>
+
+</body>
+</html>
